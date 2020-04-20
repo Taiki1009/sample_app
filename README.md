@@ -1,4 +1,5 @@
 # Ruby on Rails チュートリアルのサンプルアプリケーション
+# Railsチュートリアル１周目
 
 これは、次の教材で作られたサンプルアプリケーションです。   
 [*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
