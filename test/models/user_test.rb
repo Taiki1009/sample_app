@@ -10,7 +10,6 @@ class UserTest < ActiveSupport::TestCase
   test "should be vaild" do
     assert @user.valid?
   end
-
   test "name should be present" do
     @user.name = " "
     assert_not @user.valid?
@@ -74,6 +73,7 @@ class UserTest < ActiveSupport::TestCase
     assert_equal mixed_case_email.downcase, @user.reload.email
   end
 
+  # Passの有意性チェック
   test "password should be present (nonblank)" do
     @user.password = @user.password_confirmation = " "*6
     assert_not @user.valid?
