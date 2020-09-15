@@ -1,3 +1,11 @@
-<p>Name: <%= @user.name %>, Mail: <%= @user.email %></p>
-<p>Create: <%= @user.created_at %>, Update: <%= @user.updated_at %></p>
-<p>Now Time: <%= Time.now %></p>
+<% provide(:title, @user.name) %>
+<div class="row">
+    <aside class="col-md-4">
+        <section class="user_info">
+            <h1>
+                <%= gravatar_for @user %>
+                <%= @user.name%>
+            </h1>
+        </section>
+    </aside>
+</div>
