@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     end
   end
   def user_params
+    # 必須：require  許可：permit
     params.require(:user).permit(:name, :email,
       :password, :password_confirmation)
   end
