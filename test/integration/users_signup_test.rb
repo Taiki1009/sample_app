@@ -17,11 +17,10 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
         }
     end
     assert_template 'users/new'
- 
   end
 
   # 登録成功時のテスト
-  test 'valid signupo information' do
+  test 'valid signup information' do
     get signup_path
     assert_difference 'User.count', 1 do
       post signup_path, params: { user: {
@@ -34,6 +33,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     # App側のコードでは、redirectでshow.erbに移行するので、それについていく
     follow_redirect!
     assert_template 'users/show'
-    assert_not flash.blank?
+    assert is_logged_in?
   end
 end
