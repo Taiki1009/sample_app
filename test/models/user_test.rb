@@ -40,6 +40,7 @@ class UserTest < ActiveSupport::TestCase
         ]
       valid_addresses.each do |valid_address|
         @user.email = valid_address
+        # @user(のemail)が有効ではなかったら "#{valid_}~"がエラーメッセージに出る
         assert @user.valid?, "#{valid_address.inspect} should be valid"
       end
     end

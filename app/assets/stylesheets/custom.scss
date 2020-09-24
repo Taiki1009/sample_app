@@ -186,8 +186,10 @@ input {
         font-weight: normal;
     }
 }
-
-#session_remember_me {
+.inline {
     width: auto;
+    display: inline-block;
+}
+#session_remember_me {
     margin-left: 0;
 }

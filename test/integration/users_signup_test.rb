@@ -4,7 +4,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   # 登録失敗時のテスト
   test "invalid signup information" do
     get signup_path
-    assert_select 'form[action=?]', signup_path
     # テスト実行の前後で、User.count(ユーザー数)が変化しないか（登録失敗）
     assert_no_difference 'User.count' do
       # Name: blank, email: invalid, pass: not match & too short
