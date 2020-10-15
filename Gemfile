@@ -38,6 +38,8 @@ gem 'rails-controller-testing'
 gem 'bcrypt', '3.1.12'
 gem 'jquery-rails'
 gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
