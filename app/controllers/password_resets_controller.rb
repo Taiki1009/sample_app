@@ -1,7 +1,7 @@
 class PasswordResetsController < ApplicationController
   before_action :get_user, only: [:edit, :update]
   before_action :valid_user, only: [:edit, :update]
-  before_action :check_expuration, only: [:edit, :update]
+  before_action :check_expiration, only: [:edit, :update]
   def new
   end
 
@@ -27,12 +27,14 @@ class PasswordResetsController < ApplicationController
       render 'edit'
     elsif @user.update_attributes(user_params)
       log_in @user
+      @user.update_attribute(:reset_digest, nil)
       flash[:success] = "Password has been reset."
       redirect_to @user
     else
       render 'edit'
     end
   end
+
 
   private
 
@@ -42,7 +44,7 @@ class PasswordResetsController < ApplicationController
 
   # beforeアクション
   def get_user
-    @user = User.find_by(emial: params[:email])
+    @user = User.find_by(email: params[:email])
   end
 
   def valid_user
