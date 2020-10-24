@@ -17,7 +17,7 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     assert_template 'password_resets/new'
     # メールアドレスが有効
     post password_resets_path,
-         params: { password_reset: { email: @user.email } }
+          params: { password_reset: { email: @user.email } }
     assert_not_equal @user.reset_digest, @user.reload.reset_digest
     assert_equal 1, ActionMailer::Base.deliveries.size
     assert_not flash.empty?
