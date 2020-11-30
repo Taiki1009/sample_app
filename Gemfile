@@ -49,6 +49,13 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 3.6'
+  gem 'spring-commands-rspec'
+  gem 'factory_bot_rails'
+end
+
+group :test do
+  gem 'shoulda-matchers', '~> 4.0'
 end
 
 group :development do
