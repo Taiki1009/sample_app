@@ -14,7 +14,7 @@ class ActiveSupport::TestCase
   def log_in_as(user)
     session[:user_id] = user.id
   end
-  
+
   # Add more helper methods to be used by all tests here...
   class ActionDispatch::IntegrationTest
     def log_in_as(user, password: 'password', remember_me: '1')
